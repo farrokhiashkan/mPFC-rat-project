@@ -80,7 +80,7 @@ for f=1:length(Freq2Use)
     waveletSig=exp(2*1i*pi*Freq2Use(f).*time) .* exp(-time.^2./(2*(s^2)));
     
     waveletSig=sqrt(2).*(waveletSig./sum(abs(waveletSig).^2));
-    wavelet_fft = fft( waveletSig', n_convolution);
+    wavelet_fft = fft( transpose(waveletSig), n_convolution);
     
     x=Signal';
     x=x(:);
